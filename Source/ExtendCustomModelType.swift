@@ -199,7 +199,7 @@ extension _ExtendCustomModelType {
             // do user-specified mapping first
             if !(object is _ExtendCustomModelType) {
                 InternalLogger.logDebug("This model of type: \(type(of: object)) is not mappable but is class/struct type")
-                return object
+                return object.plainValue()
             }
 
             let children = readAllChildrenFrom(mirror: mirror)
